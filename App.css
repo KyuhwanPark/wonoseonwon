@@ -5,7 +5,7 @@ html {
 
 @font-face {
     font-family: "CustomFont";
-    src: url("../font/ChosunCentennial_ttf.ttf") format("truetype");
+    src: url("font/ChosunCentennial_ttf.ttf") format("truetype");
     font-weight: normal;
     font-style: normal;
 }
@@ -13,14 +13,15 @@ html {
 body {
     margin: 0;
     font-family: "CustomFont", sans-serif;
-    line-height: 1.6;
-    color: #333; /* 기본 텍스트 색상 변경 */
-    background-color: #f4f4f9; /* 더 부드럽고 현대적인 배경색 */
+    line-height: 1.75; /* 가독성을 고려해 모든 line-height 통일 */
+    font-size: 18px; /* 글로벌 폰트 크기 */
+    color: #333;
+    background-color: #f4f4f9;
 }
 
 /* 헤더 스타일 */
 .App-header {
-    font-size: calc(10px + 2vmin);
+    font-size: calc(12px + 2.5vmin); /* 한 곳에서 폰트 크기 정의 */
     position: relative;
     color: #222;
 }
@@ -31,15 +32,15 @@ body {
     align-items: center;
     justify-content: space-between;
     color: #fff;
-    padding: 10px 25px; /* 더 균형 잡힌 패딩 */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* 부드러운 그림자 추가 */
+    padding: 10px 25px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .nav ul {
     list-style: none;
     display: flex;
     justify-content: space-between;
-    gap: 20px; /* 간격 추가로 더 깔끔한 배열 */
+    gap: 20px;
 }
 
 .nav li a {
@@ -52,7 +53,7 @@ body {
 }
 
 .nav li a:hover {
-    color: #ffd700; /* 링크 호버 색상 강조 */
+    color: #ffd700;
 }
 
 .nav a::after {
@@ -74,48 +75,48 @@ body {
 /* 헤더 이미지 애니메이션 */
 @keyframes bgAnimation {
     0% {
-        background-image: url('../photo/가을1.jpg');
+        background-image: url('photo/가을1.jpg');
     }
     33% {
-        background-image: url('../photo/겨울1.jpg');
+        background-image: url('photo/겨울1.jpg');
     }
     66% {
-        background-image: url('../photo/봄1.jpg');
+        background-image: url('photo/봄1.jpg');
     }
     100% {
-        background-image: url('../photo/메인사진.jpg');
+        background-image: url('photo/메인사진.jpg');
     }
 }
 
 .header-image {
     width: 100%;
     height: 500px;
-    background-size: cover; /* 더 자연스러운 크기 맞춤 */
+    background-size: cover;
     background-position: center;
     animation: bgAnimation 9s infinite;
     opacity: 0.85;
-    filter: brightness(90%); /* 이미지의 밝기를 약간 낮춤 */
+    filter: brightness(90%);
 }
 
 /* 메인 섹션 */
 .main {
-    padding: 60px 20px; /* 좌우 여백 추가 */
+    padding: 60px 20px;
     display: flex;
-    background-color: #faf3e0;
     flex-direction: column;
     align-items: center;
-    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.05); /* 내부 그림자 추가 */
+    background-color: #faf3e0;
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.05);
 }
 
 section {
     text-align: center;
-    width: 80%; /* 너비를 더 유연하게 */
-    max-width: 800px; /* 큰 화면에서의 너비 제한 */
+    width: 80%;
+    max-width: 800px;
     padding: 40px;
-    background: #fff; /* 섹션 배경을 흰색으로 강조 */
-    border-radius: 10px; /* 둥근 모서리 추가 */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* 섬세한 그림자 효과 */
-    margin-bottom: 20px; /* 섹션 간 간격 추가 */
+    margin-bottom: 20px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 section .title {
@@ -127,12 +128,8 @@ section .title {
 
 section p {
     font-size: 18px;
-    line-height: 1.8; /* 가독성 향상 */
-    color: #555; /* 텍스트 색상 부드럽게 변경 */
-}
-
-section:not(:last-child) {
-    border-bottom: none; /* 이전 테두리 제거 */
+    line-height: 1.8;
+    color: #555;
 }
 
 section button {
@@ -155,9 +152,9 @@ footer {
     color: #fff;
     padding: 20px;
     background-color: #3a3a3a;
-    text-align: center; /* 가운데 정렬 */
+    text-align: center;
     font-size: 16px;
-    box-shadow: 0 -2px 6px rgba(0, 0, 0, 0.1); /* 가벼운 그림자 효과 */
+    box-shadow: 0 -2px 6px rgba(0, 0, 0, 0.1);
 }
 
 footer ul {
@@ -166,331 +163,5 @@ footer ul {
     margin: 0;
     display: flex;
     justify-content: center;
-    gap: 15px;/* 공통 스타일 설정 */
-    html {
-        scroll-behavior: smooth;
-    }
-
-    @font-face {
-        font-family: "CustomFont";
-        src: url("../font/ChosunCentennial_ttf.ttf") format("truetype");
-        font-weight: normal;
-        font-style: normal;
-    }
-
-    body {
-        margin: 0;
-        font-family: "CustomFont", sans-serif;
-        line-height: 1.75; /* 줄 간격 약간 증가 */
-        color: #333;
-        background-color: #f4f4f9;
-        font-size: 18px; /* 기본 폰트 크기 증가 (기존 16px → 18px) */
-    }
-
-    /* 헤더 스타일 */
-    .App-header {
-        font-size: calc(12px + 2.5vmin); /* 헤더 폰트 크기 증가 */
-        position: relative;
-        color: #222;
-    }
-
-    .nav {
-        background-color: rgba(210, 139, 46, 0.9);
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        color: #fff;
-        padding: 15px 30px; /* 패딩을 조금 더 넉넉하게 */
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    }
-
-    .nav ul {
-        list-style: none;
-        display: flex;
-        justify-content: space-between;
-        gap: 25px; /* 간격 추가 */
-    }
-
-    .nav li a {
-        color: #fff;
-        text-decoration: none;
-        font-size: 20px; /* 폰트 크기 증가 (기존 18px → 20px) */
-        position: relative;
-        letter-spacing: 0.5px;
-        transition: color 0.3s ease-in-out;
-    }
-
-    .nav li a:hover {
-        color: #ffd700;
-    }
-
-    .nav a::after {
-        content: "";
-        position: absolute;
-        left: 50%;
-        bottom: -4px;
-        width: 0;
-        height: 3px; /* 하단 강조선 높이 증가 */
-        background-color: #ffd700;
-        transition: width 0.3s ease-in-out, left 0.3s ease-in-out;
-    }
-
-    .nav a:hover::after {
-        width: 100%;
-        left: 0;
-    }
-
-    /* 헤더 이미지 애니메이션 */
-    @keyframes bgAnimation {
-        0% {
-            background-image: url('../photo/가을1.jpg');
-        }
-        33% {
-            background-image: url('../photo/겨울1.jpg');
-        }
-        66% {
-            background-image: url('../photo/봄1.jpg');
-        }
-        100% {
-            background-image: url('../photo/메인사진.jpg');
-        }
-    }
-
-    .header-image {
-        width: 100%;
-        height: 500px;
-        background-size: cover;
-        background-position: center;
-        animation: bgAnimation 9s infinite;
-        opacity: 0.85;
-        filter: brightness(90%);
-    }
-
-    /* 메인 섹션 */
-    .main {
-        padding: 70px 30px; /* 좌우 여백 추가 */
-        display: flex;
-        background-color: #faf3e0;
-        flex-direction: column;
-        align-items: center;
-        box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.05);
-    }
-
-    section {
-        text-align: center;
-        width: 80%; /* 너비를 더 유연하게 */
-        max-width: 900px; /* 큰 화면에서의 너비 제한 */
-        padding: 50px; /* 섹션 padding 증가 */
-        background: #fff;
-        border-radius: 10px;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        margin-bottom: 30px; /* 섹션 간 간격 증가 */
-    }
-
-    section .title {
-        font-size: 36px; /* 타이틀 폰트 크기 증가 (기존 32px → 36px) */
-        font-weight: bold;
-        margin-bottom: 25px;
-        color: #d28b2e;
-    }
-
-    section p {
-        font-size: 22px; /* 본문 폰트 크기 증가 (기존 18px → 22px) */
-        line-height: 1.9; /* 더 넓은 줄 간격 */
-        color: #555;
-    }
-
-    section button {
-        background: #d28b2e;
-        color: #fff;
-        border: none;
-        padding: 15px 25px; /* 버튼 크기 증가 */
-        font-size: 18px; /* 버튼 폰트 크기 증가 */
-        border-radius: 5px;
-        cursor: pointer;
-        transition: background-color 0.3s ease-in-out;
-    }
-
-    section button:hover {
-        background-color: #ba7725;
-    }
-
-    /* 푸터 */
-    footer {
-        color: #fff;
-        padding: 25px; /* 푸터 패딩 증가 */
-        background-color: #3a3a3a;
-        text-align: center;
-        font-size: 18px; /* 푸터 폰트 크기 증가 */
-        box-shadow: 0 -2px 6px rgba(0, 0, 0, 0.1);
-    }
-
-    footer ul {
-        list-style: none;
-        padding: 0;
-        margin: 0;
-        display: flex;
-        justify-content: center;
-        gap: 20px;
-        flex-wrap: wrap;
-    }
-
-    footer li {
-        font-size: 18px; /* 아이템 글자 크기 증가 */
-        padding: 12px 0;
-    }
-
-    footer a {
-        color: #ffd700;
-        text-decoration: none;
-        transition: color 0.3s ease-in-out;
-        font-size: 18px; /* 링크 폰트 크기 증가 */
-    }
-
-    footer a:hover {
-        color: #fff;
-    }
-    flex-wrap: wrap;
-}
-
-footer li {
-    font-size: 16px;
-    padding: 12px 0;
-}
-
-footer a {
-    color: #ffd700;
-    text-decoration: none;
-    transition: color 0.3s ease-in-out;
-}
-
-footer a:hover {
-    color: #fff;
-}html {
-    scroll-behavior: smooth;
-}
-
-@font-face {
-    font-family: "CustomFont";
-    src: url("../font/ChosunCentennial_ttf.ttf") format("truetype");
-    font-weight: normal;
-    font-style: normal;
-}
-
-body {
-    margin: 0;
-    font-family: "CustomFont", sans-serif;
-}
-
-.App-header {
-    font-size: calc(10px + 2vmin);
-    position: relative;
-}
-
-.nav {
-    background-color: rgba(210, 139, 46, 0.8);
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    color: white;
-    padding: 0 25px;
-}
-
-.nav ul {
-    list-style: none;
-    display: flex;
-    justify-content: space-between;
-    width: 50%;
-}
-
-.nav li a {
-    color: white;
-    text-decoration: none;
-    position: relative;
-}
-
-.nav a::after {
-    content: "";
-    position: absolute;
-    left: 50%;
-    bottom: -3px;
-    width: 0%;
-    height: 2px;
-    background-color: white;
-    transition: width 0.3s ease-in-out, left 0.3s ease-in-out;
-}
-
-.nav a:hover::after {
-    width: 100%;
-    left: 0;
-}
-
-
-@keyframes bgAnimation {
-    0% {
-        background-image: url('../photo/가을1.jpg');
-    }
-    33% {
-        background-image: url('../photo/겨울1.jpg');
-    }
-    66% {
-        background-image: url('../photo/봄1.jpg');
-    }
-    100% {
-        background-image: url('../photo/메인사진.jpg');
-    }
-}
-
-.header-image {
-    width: 100%;
-    height: 500px;
-    background-size: 100% 100%;
-    background-position: center;
-    animation: bgAnimation 9s infinite;
-    opacity: 0.85;
-}
-
-.main {
-    padding: 60px 0;
-    display: flex;
-    background-color: #faf3e0;
-    flex-direction: column;
-    align-items: center;
-}
-
-section {
-    text-align: center;
-    width: 60%;
-    padding: 40px;
-}
-
-section .title {
-    font-size: 30px;
-    font-weight: bold;
-    margin-bottom: 60px;
-}
-
-section p {
-    font-size: 20px;
-    /*margin-bottom: 0;*/
-}
-
-section:not(:last-child) {
-    border-bottom: 2px solid #ddd;
-}
-
-footer {
-    color: white;
-    padding: 12px;
-    background-color: rgba(58, 58, 58, 0.8);
-}
-
-footer ul {
-    list-style: none;
-    padding: 0;
-}
-
-footer li {
-    font-size: 18px;
-    padding: 12px 0;
+    gap: 15px;
 }
