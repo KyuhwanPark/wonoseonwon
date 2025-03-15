@@ -5,5 +5,9 @@
         <priority>1.0</priority>
         <changefreq>daily</changefreq>
     </url>
+    <url>
+        <loc>https://wonoseonwon.kr/</loc>
+        <priority>0.9</priority>
+        <changefreq>daily</changefreq>
+    </url>
 </urlset>
-

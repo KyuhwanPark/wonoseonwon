@@ -1,3 +1,4 @@
 User-agent: *
 Allow: /
 Sitemap: https://www.wonoseonwon.kr/sitemap.xml
+Sitemap: https://wonoseonwon.kr/sitemap.xml
