@@ -1,6 +1,5 @@
 /* 공통 스타일 설정 */
 html, body {
-    overflow-x: hidden; /* 가로 스크롤 방지 */
     width: 100%;
 }
 
