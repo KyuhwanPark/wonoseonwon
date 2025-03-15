@@ -1,0 +1,279 @@
+html {
+  scroll-behavior: smooth;
+}
+
+@font-face {
+  font-family: "CustomFont";
+  src: url("./assets/fonts/ChosunCentennial_ttf.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+  font-family: "CustomFont", sans-serif;
+}
+
+.App-header {
+  font-size: calc(10px + 2vmin);
+}
+
+/* 네비게이션 바 전체 */
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 40px;
+  z-index: 10000;
+  background: rgba(30, 30, 30, 0.8); /* 어두운 반투명 배경 */
+  color: #fff;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3); /* 그림자 효과 */
+  backdrop-filter: blur(10px); /* 배경 흐림 효과로 모던한 느낌 */
+  transition: background 0.3s ease;
+}
+
+/* 스크롤 내리면 네비게이션 배경을 더 진하게 */
+.nav.scrolled {
+  background: rgba(30, 30, 30, 0.95);
+}
+
+/* 네비게이션 내부 항목들 */
+.nav ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  gap: 30px;
+}
+
+.nav li {
+  position: relative;
+  cursor: pointer;
+  padding: 5px 0;
+  font-size: 16px;
+  transition: color 0.3s ease;
+}
+
+.nav li:hover {
+  color: #f1c40f; /* 호버시 텍스트 색상 변경 */
+}
+
+/* 밑줄 효과 */
+.nav li::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -5px;
+  width: 0;
+  height: 2px;
+  background-color: #f1c40f; /* 강조 색상 */
+  transition: width 0.3s ease-in-out, left 0.3s ease-in-out;
+}
+
+.nav li:hover::after {
+  width: 100%;
+  left: 0;
+}
+
+.scroll-to-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  border: none;
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 50%;
+  padding: 12px;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+/* 호버 효과 */
+.scroll-to-top:hover {
+  background: rgba(0, 0, 0, 0.7); /* 노란색 계열 강조 */
+  transform: scale(1.05); /* 크기 확대 */
+}
+
+/* 아이콘 색상 변경 */
+.scroll-to-top:hover svg {
+  color: black;
+}
+
+
+.header-image-container {
+  position: relative;
+  width: 70%;
+  height: 500px;
+  margin-top: 30px;
+}
+
+.header-image {
+  width: 100%;
+  height: 100%;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  opacity: 0.85;
+  transition: background-image 0.5s ease-in-out;
+  border-radius: 6px;
+  box-shadow: 6px 4px 4px rgba(0,0,0,0.2);
+  cursor: pointer;
+}
+
+.arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.4);
+  border: none;
+  color: white;
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.3s ease;
+  z-index: 10;
+}
+
+.arrow:hover {
+  background: black; /* 호버 시 배경색 변경 */
+  /*transform: translateY(-50%);*/
+}
+
+.left-arrow {
+  left: 10px;
+}
+
+.right-arrow {
+  right: 10px;
+}
+
+.main {
+  padding: 77px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /*background-color: rgba(253, 178, 146, 0.4);*/
+}
+
+section {
+  text-align: center;
+  width: 60%;
+  padding: 40px;
+}
+
+#intro{
+  font-size: 1.3vw;
+  padding: 60px 0;
+}
+
+#contact > div:not(:first-child){
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+}
+section .title {
+  font-size: 30px;
+  font-weight: bold;
+  margin-bottom: 60px;
+}
+
+section p {
+  font-size: 20px;
+  /*margin-bottom: 0;*/
+}
+
+section:not(:last-child) {
+  border-bottom: 2px solid #ddd;
+  /*box-shadow: 0 1px 0 rgba(0,0,0,0.2);*/
+}
+
+footer {
+  color: white;
+  padding: 12px;
+  background-color: rgba(58, 58, 58, 0.8);
+}
+
+footer ul {
+  list-style: none;
+  padding: 0;
+}
+
+footer li {
+  font-size: 18px;
+  padding: 12px 0;
+}
+
+.modal-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7); /* 흐린 배경 */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+}
+
+.modal {
+  background: transparent;
+  width: 70%;
+  max-width: 1300px;
+  height: 80%;
+  max-height: 720px;
+  /*overflow: hidden;*/
+  /*margin-top: 20px;*/
+  animation: slide-up-fade-in 0.5s ease-out forwards;
+}
+
+.modal .header {
+  top: 0;
+  display: flex;
+  justify-content: right;
+  align-items: center;
+  background-color: transparent;
+  color: white;
+  font-size: 17px;
+  padding: 16px;
+
+}
+
+.modal .close {
+  line-height: 150%;
+  height: 21px;
+  transform: scale(2);
+  cursor: pointer;
+}
+
+.modal .close:hover {
+  transform: scale(1.9);
+  cursor: pointer;
+}
+
+.modal img{
+  width: 100%;
+  height: 100%;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+@keyframes slide-up-fade-in {
+  from {
+    transform: translateY(30px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
