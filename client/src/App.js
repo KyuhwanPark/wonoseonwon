@@ -1,9 +1,8 @@
 import './App.css';
 import KakaoMapEmbed from "./KakaoMapEmbed";
 import {useEffect, useRef, useState} from "react";
-import {FaArrowUp} from "react-icons/fa";
-import {FaArrowLeft, FaArrowRight} from "react-icons/fa";
-import {FaMobileAlt, FaPhoneAlt} from "react-icons/fa";
+import { FaArrowUp, FaArrowLeft, FaArrowRight, FaMobileAlt, FaPhoneAlt, FaBars, FaTimes } from "react-icons/fa";
+
 
 function App() {
     const images = [
@@ -71,6 +70,7 @@ function App() {
     };
 
     const [isScrolled, setIsScrolled] = useState(false);
+    const [isMenuOpen, setIsMenuOpen] = useState(false);
 
     useEffect(() => {
         const handleScroll = () => {
@@ -85,6 +85,18 @@ function App() {
             <header className="App-header">
                 <div className={`nav ${isScrolled ? "scrolled" : ""}`}>
                     <div>원오선원</div>
+                    <div className="menu-icon" onClick={() => setIsMenuOpen(!isMenuOpen)}>
+                        <FaBars size={24}/>
+                    </div>
+
+                    <ul className={`nav-menu ${isMenuOpen ? "open" : ""}`}>
+                        <li onClick={() => scrollToSection("intro")}>소개</li>
+                        <li onClick={() => scrollToSection("notice")}>법회안내</li>
+                        <li onClick={() => scrollToSection("contact")}>연락처</li>
+                        <li onClick={() => scrollToSection("map")}>오시는길</li>
+                    </ul>
+                </div>
+                <div className={`sidebar ${isMenuOpen ? "open" : ""}`}>
                     <ul>
                         <li onClick={() => scrollToSection("intro")}>소개</li>
                         <li onClick={() => scrollToSection("notice")}>법회안내</li>
